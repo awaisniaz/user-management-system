@@ -18,6 +18,7 @@ func main() {
 	r := mux.NewRouter()
 
 	r.HandleFunc("/registration", handlers.RegisterHandler)
-	log.Fatal(http.ListenAndServe(":8080", r))
+	r.HandleFunc("/login",handlers.LoginHandler)
+	log.Fatal(http.ListenAndServe(":8000", r))
 
 }
